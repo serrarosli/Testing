@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-Login Savings UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="screen" id="prelogin">
+      <header class="status-bar">
+        <span class="time">9:41</span>
+        <div class="status-icons">
+          <span class="signal"></span>
+          <span class="wifi"></span>
+          <span class="battery"></span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-top">
+          <div class="app-icon">
+            <span class="whatsapp"></span>
+          </div>
+          <div class="hero-actions">
+            <span class="lang">EN</span>
+            <button class="icon-button" aria-label="Notifications">
+              <span class="bell"></span>
+              <span class="dot"></span>
+            </button>
+            <button class="pill" id="loginTrigger">Login</button>
+          </div>
+        </div>
+
+        <div class="card savings-card">
+          <div class="card-header">
+            <span class="title">Simpanan</span>
+            <span class="download"></span>
+          </div>
+          <div class="savings-ring">
+            <div class="ring"></div>
+            <div class="ring-content">
+              <p>Total savings</p>
+              <h3>RM *****</h3>
+              <span class="divider"></span>
+              <button class="ghost">Show Amount</button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>View All Accounts</span>
+            <span class="chevron"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-actions">
+        <div class="action">
+          <span class="action-icon lock"></span>
+          <p>i-Akaun Secure</p>
+        </div>
+        <div class="action">
+          <span class="action-icon calc"></span>
+          <p>Goal Setting</p>
+        </div>
+        <div class="action">
+          <span class="action-icon wallet"></span>
+          <p>Auto Simpan</p>
+        </div>
+      </section>
+
+      <section class="articles">
+        <div class="section-header">
+          <div>
+            <h2>Article &amp; Tips</h2>
+            <p>Featured reads</p>
+          </div>
+          <button class="text-link">View all</button>
+        </div>
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="book"></span>
+            <span>6 min read</span>
+          </div>
+          <div class="article-content">
+            <p class="tag">ACCOUNT</p>
+            <h3>EPF Nomination: Why Is It Important?</h3>
+          </div>
+        </article>
+        <div class="carousel-dots">
+          <span></span>
+          <span class="active"></span>
+          <span></span>
+        </div>
+      </section>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active">
+          <span class="nav-icon home"></span>
+          <span>Home</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon chart"></span>
+          <span>Savings</span>
+        </button>
+        <button class="nav-item primary">
+          <span class="plus">+</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon leaf"></span>
+          <span>Withdrawal</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon user"></span>
+          <span>Profile</span>
+        </button>
+      </nav>
+    </main>
+
+    <section class="screen hidden" id="homepage">
+      <div class="home-message">
+        <h1>Welcome back!</h1>
+        <p>You are now authenticated and viewing the homepage.</p>
+        <button class="pill" id="logout">Back to pre-login</button>
+      </div>
+    </section>
+
+    <div class="modal hidden" id="authModal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="close" id="closeModal" aria-label="Close">×</button>
+        <div class="avatar"></div>
+        <h3>Batman</h3>
+        <p class="masked">Na••••••••08</p>
+
+        <div class="simulator">
+          <span>Simulator</span>
+          <div class="simulator-toggle" role="radiogroup" aria-label="Biometric outcome">
+            <button class="toggle active" type="button" data-outcome="success">Success</button>
+            <button class="toggle" type="button" data-outcome="fail">Fail</button>
+          </div>
+        </div>
+
+        <div class="biometric" id="biometricStep">
+          <div class="face-id"></div>
+          <p class="scan">Scanning Face ID…</p>
+          <p class="scan-note">Hold still while we authenticate.</p>
+        </div>
+
+        <form class="password hidden" id="passwordStep">
+          <label for="passwordInput">Password</label>
+          <div class="password-row">
+            <input id="passwordInput" type="password" placeholder="Password" />
+            <button type="button" class="eye" aria-label="Toggle password"></button>
+          </div>
+          <div class="alert">
+            <span class="info">i</span>
+            <span>Do not share your login credentials with anyone.</span>
+          </div>
+          <button class="pill" type="submit">log in now</button>
+          <button type="button" class="text-link">Forgot Username / Password?</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
